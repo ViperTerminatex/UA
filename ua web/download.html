@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <link rel="shortcut icon" href="./Logo.png" type="image/x-icon">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>UA | Download | &copy;</title>
+     <style>
+          body{
+               background-color: #161616;
+               color: dodgerblue;
+               margin:0;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+               font-size: 1.9rem;
+          }
+
+          .Download fieldset{
+               border-radius: 6px;
+               border-color: dodgerblue;
+               border-style: solid;
+               border-width: 3px;   
+          }
+
+          .Download button{
+               font-size: 1.9rem;
+               cursor: pointer;
+               background-color: dodgerblue;
+               color: #202020;
+               outline: none;
+               border: none;
+               border-radius: 5px;
+               padding: 5px 5px;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+          }
+
+          .Download button:active{
+               transform: scale(0.9);
+          }
+
+          .linux-type{
+               border-radius: 10px;
+               border: dodgerblue 3px solid;
+               color: dodgerblue;
+               background-color: #161616;
+          }
+
+          .close-LT{
+               font-size: 2rem;
+               cursor: pointer;
+               float: right;
+               overflow: none;
+               transition: transform 990ms, color 990ms;
+          }
+
+          .close-LT:hover{
+               transform: rotate(360deg);
+               color: red;
+          }
+
+          body button, a{
+               text-decoration: none;
+               font-size: 2rem;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+               padding: 4px 4px;
+               outline:none;
+               border: none;
+               background-color: #161616;
+               color: dodgerblue;
+               transition: color 1900ms, background-color 1900ms;
+               border-radius: 6px;
+          }
+
+          body button, a:hover{
+               color: royalblue;
+               background-color: #202020;
+          }
+
+          body button, a:active{
+               transform: scale(0.9);
+          }
+
+          body button, a:focus-within{
+               color: royalblue;
+               background-color: #202020;
+          }
+     </style>
+</head>
+<body>
+     <div class="Download" id="Download">
+          <fieldset>
+               <legend>Download</legend>
+               <button type="button"><ion-icon name="logo-windows"></ion-icon> Windows</button>
+               <button type="button" onclick="CLT()"><ion-icon name="logo-tux"></ion-icon> Linux</button>
+          </fieldset>
+     </div>
+
+     <dialog class="linux-type">
+          <h1>Choose the linux type</h1>
+          <a href="">Debian | Ubuntu</a>
+          <a href="">Red Hat</a>
+          <a href="">Mint</a>
+          <ion-icon name="close-outline" class="close-LT" onclick="closeCLT()"></ion-icon>
+     </dialog>
+     <script>
+          const dialog = document.querySelector(".linux-type");
+
+dialog.addEventListener("keydown", function(ev) {
+     if (ev.ctrlKey && ev.altKey && ev.key === 'c') {
+          dialog.close();
+     }
+});
+
+
+function CLT(){
+     dialog.showModal();
+}
+
+function closeCLT(){
+     dialog.close();
+}
+     </script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <link rel="shortcut icon" href="./Logo.png" type="image/x-icon">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=download_2" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>UA | &copy;</title>
+     <style>
+          html{
+               scroll-behavior: smooth;
+          }
+
+          body{
+               background-color: #161616;
+               color: dodgerblue;
+               margin:0;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+               font-size: 1.9rem;
+               cursor: url("./cursor/cursor.cur"), auto;
+          }
+
+          button a{
+               cursor: url("./cursor/pointer.cur"), auto;
+          }
+
+          .heading{
+               font-size: 2.6rem;
+               text-align: center;
+          }
+
+          .nav{
+               background-color: dodgerblue;
+               color: #161616;
+               width: 100%;
+               height: 240px;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+               font-size: 2rem;
+               position: sticky;
+               top: 0;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap: 10px;
+               opacity: 0.6;
+               transition: opacity 1s;
+          }
+
+          .nav:hover,
+          .nav:focus-within,
+          .nav:focus-visible{
+               opacity: 1;
+          }
+
+          .nav button, a{
+               text-decoration: none;
+               font-size: 2rem;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+               padding: 4px 4px;
+               outline:none;
+               border: none;
+               background-color: #161616;
+               color: dodgerblue;
+               transition: color 1900ms, background-color 1900ms;
+               border-radius: 6px;
+          }
+
+          .nav button, a:hover{
+               color: royalblue;
+               background-color: #202020;
+          }
+
+          .nav button, a:active{
+               transform: scale(0.9);
+          }
+
+          .nav button, a:focus-within{
+               color: royalblue;
+               background-color: #202020;
+          }
+
+          .nav .search-bar-con{
+               margin-top: 1px;
+               display: flex;
+               position: absolute;
+               top: 0;
+               left: 0;
+          }
+
+          .search-bar{
+               border: none;
+               outline: none;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+               font-size: 1.2rem;
+               color: #1e8fffe7;
+               background-color: #202020;
+               border-radius: 5px;
+               padding: 5px 5px;
+          }
+
+          .search-btn{
+               cursor: url("./cursor/pointer.cur"), auto;
+               text-decoration: none;
+               font-size: 1.2rem;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+               padding: 4px 4px;
+               outline:none;
+               border: none;
+               background-color: #161616;
+               color: dodgerblue;
+               transition: color 1900ms, background-color 1900ms;
+               border-radius: 6px;
+          }
+
+          .search-btn:hover{
+               color: royalblue;
+               background-color: #202020;
+          }
+
+          .search-btn:active{
+               transform: scale(0.9);
+          }
+
+          .search-btn:focus-within{
+               color: royalblue;
+               background-color: #202020;
+          }
+
+          .context{
+               width: 200px;
+               margin: 0;
+               padding-left: 0;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+               background: #161616;
+               position: fixed;
+               font-size: 16px;
+               visibility: hidden;
+          }
+
+          .context-link{
+               list-style-type: none;
+               padding: 0.75em 1em;
+               font-size: 0.85em;
+               font-family: 'Inter', sans-serif;
+               cursor: url("./cursor/pointer.cur"), auto;
+          }
+
+          .context-link:hover{
+               background: #202020;
+          }
+
+          .Privacy-n-policy fieldset{
+               border-radius: 6px;
+               border-color: dodgerblue;
+               border-style: solid;
+               border-width: 3px;
+          }
+
+          .Download fieldset{
+               border-radius: 6px;
+               border-color: dodgerblue;
+               border-style: solid;
+               border-width: 3px;   
+          }
+
+          .Download button{
+               font-size: 1.9rem;
+               cursor: url("./cursor/pointer.cur"), auto;
+               background-color: dodgerblue;
+               color: #202020;
+               outline: none;
+               border: none;
+               border-radius: 5px;
+               padding: 5px 5px;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+          }
+
+          .Download button:active{
+               transform: scale(0.9);
+          }
+
+          .linux-type{
+               border-radius: 10px;
+               border: dodgerblue 3px solid;
+               color: dodgerblue;
+               background-color: #161616;
+          }
+
+          .close-LT{
+               font-size: 2rem;
+               cursor: url("./cursor/pointer.cur"), auto;
+               float: right;
+               overflow: none;
+               transition: transform 990ms, color 990ms;
+          }
+
+          .close-LT:hover{
+               transform: rotate(360deg);
+               color: red;
+          }
+
+          .Details fieldset{
+               color: dodgerblue;
+               border: 3px dodgerblue solid;
+          }
+
+          .q-n-a fieldset{
+               border-radius: 6px;
+               border-color: dodgerblue;
+               border-style: solid;
+               border-width: 3px;
+          }
+
+     </style>
+</head>
+<body>
+     <div class="nav">
+          <div class="search-bar-con">
+               <input type="text" list="search" class="search-bar" placeholder="search..">
+               <datalist id="search">
+                    <option class="OP1">Download</option>
+                    <option class="OP2">Privacy & policy</option>
+                    <option class="OP3">Details</option>
+                    <option class="OP4">Q & A</option>
+               </datalist>
+               <button type="submit" class="search-btn">Search</button>
+          </div>
+          <button type="button">
+               <a href="#Privacy-n-policy"><ion-icon name="shield-half-outline"></ion-icon> <b>P</b>rivacy & <b>P</b>olicy</a>
+          </button>
+          <button type="button">
+               <a href="#Download"><span class="material-symbols-outlined">download_2</span> <b>D</b>ownload</a>
+          </button>
+          <button type="button">
+               <a href="#Details"><ion-icon name="information-circle-outline"></ion-icon> Details</a>
+          </button>
+          <button type="button">
+               <a href="#q-n-a"><ion-icon name="help-circle-outline"></ion-icon> Q & A</a>
+          </button>
+     </div>
+     <h1 class="heading">
+          <b>U</b>nblocked<b>A</b>ccess
+     </h1>
+     <div class="Privacy-n-policy" id="Privacy-n-policy">
+          <fieldset>
+               <legend>Privacy & Policy</legend>
+               <p>Your privacy is of utmost importance to us. Our application provides access to blocked websites by redirecting internet traffic through secure servers. While we facilitate unblocking, we do not collect, store, or share any personal data, browsing history, or web activity. All traffic is encrypted and anonymized to ensure a secure and private browsing experience. We do not track or monitor user actions, and we adhere to a strict no-logs policy. However, please be aware that third-party websites accessed through our service may have their own privacy policies, and we encourage you to review those policies as well. By using our application, you acknowledge and agree to this policy.</p>
+          </fieldset>
+     </div>
+     <br>
+     
+     <div class="Details" id="Details">
+          <fieldset>
+               <legend>Details</legend>
+               <p>Our application is designed to provide seamless access to websites that may be restricted or blocked in certain regions. By routing your internet traffic through secure and anonymous servers, the app enables users to bypass censorship and access content freely. Whether it's for work, research, or personal use, our tool ensures that you can connect to the global internet without limitations. With a focus on user privacy, the app encrypts your data to protect it from third parties and maintains a strict no-logs policy, ensuring that your browsing activity remains private and secure.</p>
+          </fieldset>
+     </div>
+     <div class="Download" id="Download">
+          <fieldset>
+               <legend>Download</legend>
+               <button type="button" onclick="donwloadwindows()"><ion-icon name="logo-windows"></ion-icon> Windows</button>
+               <button type="button" onclick="CLT()"><ion-icon name="logo-tux"></ion-icon> Linux</button>
+          </fieldset>
+     </div>
+
+     <dialog class="linux-type">
+          <h1>Choose the linux type</h1>
+          <a href="">Debian | Ubuntu</a>
+          <a href="">Red Hat</a>
+          <a href="">Mint</a>
+          <ion-icon name="close-outline" class="close-LT" onclick="closeCLT()"></ion-icon>
+     </dialog>
+     <div class="q-n-a" id="q-n-a">
+          <fieldset>
+               <legend>Q & A</legend>
+               <details>
+                    <summary>Is <b>U</b>nblocked<b>A</b>ccess free?</summary>
+                    <p><u>Yes!</u></p>
+               </details>
+               <br>
+               <details>
+                    <summary>Who was this made by?</summary>
+                    <p><u>ME!</u></p>
+               </details>
+               <br>
+               <details>
+                    <summary>How long did it take to make?</summary>
+                    <p><u>To long(years)</u></p>
+               </details>
+               <br>
+               <details>
+                    <summary>Why was this made?</summary>
+                    <p><u>STOP asking questions</u></p>
+               </details>
+          </fieldset>
+     </div>
+     <!-- Start of ContextMenu html -->
+     <ul class="context">
+          <li class="context-link">
+               <span class="context-label"><ion-icon name="share-social-outline"></ion-icon> Share</span>
+          </li>
+          <li class="context-link">
+               <span class="context-label"><ion-icon name="settings-outline"></ion-icon> Settings</span>
+          </li>
+          <li class="context-link">
+               <span class="context-label" id="NOTI"><ion-icon name="notifications-outline"></ion-icon> Notifications</span>
+          </li>
+          <li class="context-link">
+               <span class="context-label" id="Inspect"><ion-icon name="code-slash-outline"></ion-icon> Inspect</span>
+          </li>
+     </ul>
+     <!-- End of ContextMenu html -->
+      <script>
+          function donwloadwindows(){
+               window.open("./windows-download-exe.html");
+          }
+      </script>
+      <!-- start of the contextmenu functionality -->
+      <script>
+          const inspect = document.querySelector("#Inspect");
+          const notifications = document.querySelector("#NOTI");
+
+               notifications.addEventListener("click", () => {
+                    if ("Notification" in window) {
+                    if (Notification.permission === "granted") {
+                         new Notification("Welcome!");
+                    } else if (Notification.permission !== "denied") {
+                         Notification.requestPermission().then(permission => {
+                              if (permission === "granted") {
+                                   const username = prompt("What is your name?");
+                                   new Notification(`Hello, ${username || 'User'}`, {
+                                   body: "Welcome to our site!",
+                                   icon: "Logo.png",
+                                   requireInteraction: true
+                                   });
+                              }
+                         });
+                    }
+               } else{
+                    console.log("This browser does not support desktop notification");
+               }
+               });
+
+
+         inspect.addEventListener("click", () => {
+               window.open("index-info.txt");
+         });
+
+      </script>
+      <!-- End of the contextmenu functionality -->
+     <!-- Start of ContextMenu Script -->
+     <script>
+     {
+          const contextMenu = document.querySelector(".context");
+          const updateMenuPosition = (x, y) => {
+               const MaxLeftValue = window.innerWidth - contextMenu.offsetWidth;
+               const maxTopValue = window.innerHeight - contextMenu.offsetHeight;
+
+               contextMenu.style.left = `${Math.min(MaxLeftValue, x)}px`;
+               contextMenu.style.top = `${Math.min(maxTopValue, y)}px`;
+          };
+
+          document.addEventListener("contextmenu", (ev) => {
+               ev.preventDefault();
+
+               updateMenuPosition(ev.clientX, ev.clientY);
+               contextMenu.style.visibility = 'visible';
+          });
+
+          document.addEventListener("click", () => {
+               contextMenu.style.visibility = null;
+          });
+     }
+     </script>
+     <!-- End of ContextMenu Script -->
+      <!-- Search Script -->
+     <script>
+          const Search_BTN = document.querySelector(".search-btn");
+          const Search_BAR = document.querySelector(".search-bar");
+     
+          Search_BTN.addEventListener("click", () => {
+               const searchValue = Search_BAR.value.toLowerCase(); // Convert to lowercase for case-insensitive matching
+               
+               if (searchValue === "download") {
+                    window.open("./download.html", "", "");
+               } else if (searchValue === "privacy & policy") {
+                    window.open("./privacy & policy.html", "", "");
+               } else if (searchValue === "details") {
+                    window.open("./detail.html", "", "");
+               } else if (searchValue === "q & a") {
+                    window.open("./Q & A.html", "", "");
+               } else if (searchValue === "vv//drive//debian//li") {
+                    window.open("./dd.html");
+               } else {
+                    window.open("./no matches found.html", "", "");
+               }
+                   
+          });
+     </script>
+     <!-- End of the Search Script -->
+      <!-- Type of linux script -->
+      <script>
+          const dialog = document.querySelector(".linux-type");
+
+          dialog.addEventListener("keydown", function(ev) {
+               if (ev.ctrlKey && ev.altKey && ev.key === 'c') {
+                    dialog.close();
+               }
+          });
+
+
+          function CLT(){
+               dialog.showModal();
+          }
+
+          function closeCLT(){
+               dialog.close();
+          }
+      </script>
+      <!-- End of the linux script -->
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

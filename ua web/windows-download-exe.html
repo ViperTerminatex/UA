@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <link rel="shortcut icon" href="./Logo.png" type="image/x-icon">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>UA | Download windows UA | &copy;</title>
+     <style>
+          body{
+               background-color: #161616;
+               color: dodgerblue;
+               margin:0;
+               font-family: Verdana, Geneva, Tahoma, sans-serif;
+               font-weight: 700;
+               font-size: 1.9rem;
+          }
+
+          dialog{
+               border-radius: 10px;
+               border: dodgerblue 3px solid;
+               color: dodgerblue;
+               background-color: #161616;
+          }
+     </style>
+</head>
+<body>
+     <dialog>
+          <p>If the download didn't start then click <a href="./Download-windows-UA.zip">Here</a></p>
+     </dialog>
+     <script>
+          const dialog = document.querySelector("dialog");
+          window.onload = function() {
+               // Create an invisible link
+               const link = document.createElement('a');
+               link.href = './Download-windows-UA.zip'; // Replace with your file URL
+               link.download = 'Download-windows-UA.zip'; // Specify the file name for download
+
+               // Append to the document and trigger click to start download
+               document.body.appendChild(link);
+               link.click();
+
+               // Remove the link after triggering the download
+               document.body.removeChild(link);
+          };
+
+               setTimeout(() => {
+                    dialog.showModal();
+               }, 4000);
+     </script>
+</body>
+</html>
